@@ -1,0 +1,32 @@
+# Taking input from user
+tubenum = int(input("Hello, welcome to Vuppy. What is your total number of tubes? Enter '0' if you'd like help calculating your tube number."))
+
+
+#if tubenum == 0:
+ #   print("Total tube number is equivalent to the number of tails, plus a control, plus one extra for every 10 tails.")
+#tubenum=int(input("What is your total number of tubes?"))
+
+#elif tubenum > 0:
+print("Your total number of tubes is:", tubenum)
+primernum = int(input("What is your total number of primers? (max 4)"))
+
+#calculations
+totalmix = tubenum * 50
+emerald = tubenum * 25
+dna = tubenum * 4
+
+#prints
+print("\nHere are your mastermix volumes:")
+print("Emerald:", emerald, "ul.")
+print("DNA:", dna, "ul.")
+
+if primernum == 1:
+    primers = tubenum * .5
+    print("Primer:", primers, "ul.")
+else:
+    primers = (tubenum * .5) * primernum
+    print("Primers:", primers, "ul total,", primers/primernum, "ul per primer.")
+
+ddh20 = print("ddH20:", totalmix - (emerald + dna + primers), "ul.")
+print("Your total volume is:", totalmix, "ul.")
+print("\nThank you for using Vuppy.")
